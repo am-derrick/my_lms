@@ -137,3 +137,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # custom user model
 
 AUTH_USER_MODEL = 'courses.User'
+
+# Allauth settings
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_REQUIRED = True
