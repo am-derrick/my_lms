@@ -37,8 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	# rest framework for working with APIs and the courses app
 	'courses',
 	'rest_framework',
+	'rest_framework.authtoken',
+	# verification with social sites
+	'django.contrib.sites',
+	'allauth',
+	'allauth.account',
+	'allauth.socialaccount',
+	'dj_rest_auth',
+	'dj_rest_auth.registration',
 ]
 
 MIDDLEWARE = [
