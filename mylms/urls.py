@@ -25,6 +25,6 @@ urlpatterns = [
 	path('api/auth/registration/', include('dj_rest_auth.registration.urls')),
 	path('signup/', signup, name='signup'),
 	path('login/', login, name='login'),
-	path('learner_dashbaord/', learner_dashboard, name='learner_dashboard'),
+	path('learner_dashboard/', learner_dashboard, name='learner_dashboard'),
 	path('mentor_dashboard/', mentor_dashboard, name='mentor_dashbaord'),
 ]
