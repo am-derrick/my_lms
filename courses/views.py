@@ -14,7 +14,7 @@ def signup(request):
 			elif role == 'mentor':
 				user.is_mentor = True
 			user.save()
-# login(request, user)
+			login(request, user)
 			return redirect('login')
 	else:
 		form = SignUpForm()
@@ -22,15 +22,9 @@ def signup(request):
 
 def login(request):
 	if request.method == 'POST':
-		form = LoginForm(request.POST)
+		form = LoginForm(data=request.POST)
 		if form.is_valid():
-			user = form.save(commit=False)
-			role = form.cleaned_data.get('role')
-			if role == 'learner':
-				user.is_learner = True
-			elif role == 'mentor':
-				user.is_mentor = True
-			user.save()
+			user = form.get_user()
 			login(request, user)
 			if user == 'learner':
 				return redirect('learner_dashboard')
