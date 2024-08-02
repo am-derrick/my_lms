@@ -16,5 +16,5 @@ def signup(request, role):
 			login(request, user)
 			return redirect('home')
 	else:
-		form = SignUpForm(intial={'role': role})
+		form = SignUpForm(initial={'role': role})
 	return render(request, 'courses/signup.html', {'form': form, 'role': role})
