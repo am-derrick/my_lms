@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from courses.views import signup, login
+from courses.views import signup, login, learner_dashboard, mentor_dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,6 @@ urlpatterns = [
 	path('api/auth/registration/', include('dj_rest_auth.registration.urls')),
 	path('signup/', signup, name='signup'),
 	path('login/', login, name='login'),
+	path('learner_dashbaord/', learner_dashboard, name='learner_dashboard'),
+	path('mentor_dashboard/', mentor_dashboard, name='mentor_dashbaord'),
 ]

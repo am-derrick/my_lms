@@ -40,3 +40,8 @@ def login(request):
 		form = LoginForm()
 	return render(request, 'login.html', {'form': form})
 
+def learner_dashboard(request):
+	return render(request, 'learner_dashboard.html')
+
+def mentor_dashboard(request):
+	return render(request, 'mentor_dashboard.html')
