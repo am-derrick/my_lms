@@ -3,7 +3,10 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import User
 
 class SignUpForm(UserCreationForm):
-	role = forms.CharField(max_length=30, widget=forms.HiddenInput())
+	ROLE_CHOICES = {
+		('learner', 'Learner'),
+		('instructor', 'Instructor')
+	role = forms.CharField(choices=ROLE_CHOICES, required=True)
 
 	class Meta:
 		model = User

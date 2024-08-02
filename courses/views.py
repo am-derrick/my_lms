@@ -8,13 +8,14 @@ def signup(request, role):
 		form = SignUpForm(request.POST)
 		if form.is_valid():
 			user = form.save(commit=False)
-			if form.cleaned_data['role'] == 'learner':
+			role = form.cleaned_data.get('role')
+			if role == 'learner':
 				user.is_learner = True
-			elif form.cleaned_data['role'] == 'mentor':
+			elif role == 'mentor':
 				user.is_mentor = True
 			user.save()
 			login(request, user)
-			return redirect('home')
+			return redirect('login')
 	else:
-		form = SignUpForm(initial={'role': role})
-	return render(request, 'signup.html', {'form': form, 'role': role})
+		form = SignUpForm()
+	return render(request, 'signup.html', {'form': form})
