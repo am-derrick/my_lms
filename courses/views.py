@@ -3,7 +3,7 @@ from django.contrib.auth import login
 from .forms import SignUpForm, LoginForm
 from .models import User
 
-def signup(request):
+def signup_view(request):
 	if request.method == 'POST':
 		form = SignUpForm(request.POST)
 		if form.is_valid():
@@ -20,7 +20,7 @@ def signup(request):
 		form = SignUpForm()
 	return render(request, 'signup.html', {'form': form})
 
-def login(request):
+def login_view(request):
 	if request.method == 'POST':
 		form = LoginForm(data=request.POST)
 		if form.is_valid():
