@@ -7,7 +7,7 @@ class SignUpForm(UserCreationForm):
 		('learner', 'Learner'),
 		('instructor', 'Instructor'),
 	}
-	role = forms.CharField(choices=ROLE_CHOICES, required=True)
+	role = forms.ChoiceField(choices=ROLE_CHOICES, required=True)
 
 	class Meta:
 		model = User
