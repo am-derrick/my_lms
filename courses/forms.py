@@ -5,7 +5,8 @@ from .models import User
 class SignUpForm(UserCreationForm):
 	ROLE_CHOICES = {
 		('learner', 'Learner'),
-		('instructor', 'Instructor')
+		('instructor', 'Instructor'),
+	}
 	role = forms.CharField(choices=ROLE_CHOICES, required=True)
 
 	class Meta:
