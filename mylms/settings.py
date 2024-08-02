@@ -154,3 +154,9 @@ ACCOUNT_EMAIL_REQUIRED = True
 # print emails to the console
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# custom serializer
+REST_AUTH_REGISTER_SERIALIZERS = {
+	'REGISTER_SERIALIZER': 'courses.serializers.CustomRegisterSerializer',
+}
+
